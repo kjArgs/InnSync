@@ -48,6 +48,7 @@ erDiagram
         string role
         boolean is_active
     }
+
     ROOM_TYPES {
         uuid id PK
         string name UK
@@ -76,15 +77,13 @@ erDiagram
     PAYMENTS {
         uuid id PK
         uuid booking_id FK
-        uuid recorded_by FK
-        uuid original_payment_id FK
-        string type
-        decimal amount
+        string mode_of_payment
+        decimal remaining_balance
+        decimal total_amount
     }
     ROOM_READINESS_EVENTS {
         uuid id PK
         uuid room_id FK
-        uuid booking_id FK
         uuid actor_id FK
         string from_readiness
         string to_readiness
